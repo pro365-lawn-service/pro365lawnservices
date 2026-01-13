@@ -13,6 +13,7 @@
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
     .card { padding:1rem; border:1px solid #ccc; border-radius:8px; }
     button { cursor:pointer; }
+    input, select { width: 100%; padding:0.5rem; margin-bottom:1rem; border-radius:6px; border:1px solid #ccc; }
   </style>
 </head>
 <body>
@@ -80,40 +81,83 @@
     ⏰ <strong>Hours:</strong> Monday – Friday, 8:00 AM – 8:00 PM
   </p>
 
-  <h3>Request a Quote</h3>
-  <form onsubmit="window.location.href='sms:14078020334?body=Hello, I would like a quote for lawn service.'; return false;">
-    <p><input type="text" name="Name" placeholder="Your Name" required></p>
-    <p><input type="tel" name="Phone" placeholder="Phone Number" required></p>
-    <p><input type="text" name="Address" placeholder="Property Address" required></p>
-    <p>
-      <select name="Service">
-        <option>Weekly Lawn Service</option>
-        <option>Biweekly Lawn Service</option>
-        <option>One-Time Cut</option>
-        <option>Cleanup / Leaf Removal</option>
-      </select>
-    </p>
-    <p><button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Send Quote Request</button></p>
+  <h3>Request a Quote (English)</h3>
+  <!-- Email Form -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="address" placeholder="Property Address" required>
+    <select name="service">
+      <option>Weekly Lawn Service</option>
+      <option>Biweekly Lawn Service</option>
+      <option>One-Time Cut</option>
+      <option>Cleanup / Leaf Removal</option>
+    </select>
+    <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Send Quote by Email</button>
+  </form>
+
+  <!-- SMS Form -->
+  <form onsubmit="event.preventDefault(); 
+    const name = this.name.value; 
+    const phone = this.phone.value; 
+    const address = this.address.value; 
+    const service = this.service.value; 
+    window.location.href = `sms:14078020334?body=Hello, my name is ${name}. Phone: ${phone}. Address: ${address}. Requesting: ${service}`;">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="address" placeholder="Property Address" required>
+    <select name="service">
+      <option>Weekly Lawn Service</option>
+      <option>Biweekly Lawn Service</option>
+      <option>One-Time Cut</option>
+      <option>Cleanup / Leaf Removal</option>
+    </select>
+    <button type="submit" style="background:#0ea5e9;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Send Quote by Text</button>
   </form>
 
   <h3>Formulario de Cotización (Español)</h3>
-  <form onsubmit="window.location.href='sms:14078020334?body=Hola, me gustaría una cotización para servicios de jardín.'; return false;">
-    <p><input type="text" name="Nombre" placeholder="Su Nombre" required></p>
-    <p><input type="tel" name="Teléfono" placeholder="Número de Teléfono" required></p>
-    <p><input type="text" name="Dirección" placeholder="Dirección de la Propiedad" required></p>
-    <p>
-      <select name="Servicio">
-        <option>Corte de grama semanal</option>
-        <option>Corte de grama quincenal</option>
-        <option>Servicio de una sola vez</option>
-        <option>Limpieza / Hojas</option>
-      </select>
-    </p>
-    <p><button type="submit" style="background:#0ea5e9;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Enviar Solicitud</button></p>
+  <!-- Email Form Spanish -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="text" name="name" placeholder="Su Nombre" required>
+    <input type="tel" name="phone" placeholder="Número de Teléfono" required>
+    <input type="text" name="address" placeholder="Dirección de la Propiedad" required>
+    <select name="service">
+      <option>Corte de grama semanal</option>
+      <option>Corte de grama quincenal</option>
+      <option>Servicio de una sola vez</option>
+      <option>Limpieza / Hojas</option>
+    </select>
+    <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Enviar Cotización por Email</button>
+  </form>
+
+  <!-- SMS Form Spanish -->
+  <form onsubmit="event.preventDefault(); 
+    const name = this.name.value; 
+    const phone = this.phone.value; 
+    const address = this.address.value; 
+    const service = this.service.value; 
+    window.location.href = `sms:14078020334?body=Hola, mi nombre es ${name}. Teléfono: ${phone}. Dirección: ${address}. Servicio solicitado: ${service}`;">
+    <input type="text" name="name" placeholder="Su Nombre" required>
+    <input type="tel" name="phone" placeholder="Número de Teléfono" required>
+    <input type="text" name="address" placeholder="Dirección de la Propiedad" required>
+    <select name="service">
+      <option>Corte de grama semanal</option>
+      <option>Corte de grama quincenal</option>
+      <option>Servicio de una sola vez</option>
+      <option>Limpieza / Hojas</option>
+    </select>
+    <button type="submit" style="background:#0ea5e9;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Enviar Cotización por SMS</button>
   </form>
 
   <h3>Service Area Map</h3>
-  <iframe src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Volusia+County,FL" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+  <iframe
+    width="100%"
+    height="300"
+    style="border:0;"
+    loading="lazy"
+    allowfullscreen
+    src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Volusia+County,Florida">
+  </iframe>
 </section>
 
 <section id="pricing">
@@ -130,7 +174,6 @@
     <div class="card"><a href="https://www.zellepay.com" style="text-decoration:none;font-weight:bold;">Pay with Zelle</a></div>
     <div class="card"><a href="#" style="text-decoration:none;font-weight:bold;">Other Payment Options</a></div>
   </div>
-  <p style="font-size:0.9rem;">Payment links will be provided after service or upon request.</p>
 </section>
 
 <footer>
@@ -142,4 +185,5 @@
 </footer>
 </body>
 </html>
+
 
