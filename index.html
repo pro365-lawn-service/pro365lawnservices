@@ -83,9 +83,9 @@
 
   <h3>Request a Quote (English)</h3>
   <!-- Email Form -->
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <form action="mailto:pro365e@gmail.com" method="post" enctype="text/plain">
     <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Your Email" required>
     <input type="text" name="address" placeholder="Property Address" required>
     <select name="service">
       <option>Weekly Lawn Service</option>
@@ -93,33 +93,15 @@
       <option>One-Time Cut</option>
       <option>Cleanup / Leaf Removal</option>
     </select>
-    <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Send Quote by Email</button>
-  </form>
-
-  <!-- SMS Form -->
-  <form onsubmit="event.preventDefault(); 
-    const name = this.name.value; 
-    const phone = this.phone.value; 
-    const address = this.address.value; 
-    const service = this.service.value; 
-    window.location.href = `sms:14078020334?body=Hello, my name is ${name}. Phone: ${phone}. Address: ${address}. Requesting: ${service}`;">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="text" name="address" placeholder="Property Address" required>
-    <select name="service">
-      <option>Weekly Lawn Service</option>
-      <option>Biweekly Lawn Service</option>
-      <option>One-Time Cut</option>
-      <option>Cleanup / Leaf Removal</option>
-    </select>
-    <button type="submit" style="background:#0ea5e9;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Send Quote by Text</button>
+    <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">
+      Send Quote by Email
+    </button>
   </form>
 
   <h3>Formulario de Cotización (Español)</h3>
-  <!-- Email Form Spanish -->
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <form action="mailto:pro365e@gmail.com" method="post" enctype="text/plain">
     <input type="text" name="name" placeholder="Su Nombre" required>
-    <input type="tel" name="phone" placeholder="Número de Teléfono" required>
+    <input type="email" name="email" placeholder="Su Correo Electrónico" required>
     <input type="text" name="address" placeholder="Dirección de la Propiedad" required>
     <select name="service">
       <option>Corte de grama semanal</option>
@@ -127,36 +109,18 @@
       <option>Servicio de una sola vez</option>
       <option>Limpieza / Hojas</option>
     </select>
-    <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Enviar Cotización por Email</button>
-  </form>
-
-  <!-- SMS Form Spanish -->
-  <form onsubmit="event.preventDefault(); 
-    const name = this.name.value; 
-    const phone = this.phone.value; 
-    const address = this.address.value; 
-    const service = this.service.value; 
-    window.location.href = `sms:14078020334?body=Hola, mi nombre es ${name}. Teléfono: ${phone}. Dirección: ${address}. Servicio solicitado: ${service}`;">
-    <input type="text" name="name" placeholder="Su Nombre" required>
-    <input type="tel" name="phone" placeholder="Número de Teléfono" required>
-    <input type="text" name="address" placeholder="Dirección de la Propiedad" required>
-    <select name="service">
-      <option>Corte de grama semanal</option>
-      <option>Corte de grama quincenal</option>
-      <option>Servicio de una sola vez</option>
-      <option>Limpieza / Hojas</option>
-    </select>
-    <button type="submit" style="background:#0ea5e9;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">Enviar Cotización por SMS</button>
+    <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 1.25rem;border:none;border-radius:999px;font-weight:bold;">
+      Enviar Cotización por Email
+    </button>
   </form>
 
   <h3>Service Area Map</h3>
-  <iframe
-    width="100%"
-    height="300"
-    style="border:0;"
-    loading="lazy"
-    allowfullscreen
-    src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Volusia+County,Florida">
+  <iframe 
+    src="https://www.google.com/maps?q=Volusia+County,+Florida&output=embed" 
+    width="100%" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen>
   </iframe>
 </section>
 
