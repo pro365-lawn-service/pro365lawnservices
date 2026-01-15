@@ -1,560 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PRO365 Lawn Service offers mowing, trimming, edging, blowing, landscaping, mulch, and cleanups in Volusia County, FL. Bilingual English & Spanish." />
-  <meta name="keywords" content="PRO365, lawn care, mowing, trimming, edging, blowing, landscaping, hedging, mulch, rocks, leaf cleanup, Volusia County, Florida, grass, grama, corte" />
-  <title>PRO365 Lawn Service | Volusia County, FL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PRO365 Lawn Service provides professional lawn care, mowing, trimming, edging, landscaping, mulch, and cleanup services in Volusia County, FL. Bilingual English & Spanish.">
+<meta name="keywords" content="lawn care, mowing, trimming, edging, landscaping, mulch, hedging, leaf cleanup, Volusia County, Florida, PRO365, grama, corte">
+<title>PRO365 Lawn Service | Volusia County FL</title>
 
-  <!-- Modern font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#f6f8fb;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --green:#16a34a;
-      --green2:#0f7a35;
-      --blue:#0ea5e9;
-      --ring: rgba(22,163,74,.25);
-      --shadow: 0 12px 30px rgba(2,6,23,.08);
-      --shadow2: 0 8px 18px rgba(2,6,23,.06);
-      --radius: 18px;
-    }
+<style>
+:root{
+  --green:#16a34a;
+  --green-dark:#0f7a35;
+  --blue:#0ea5e9;
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --shadow:0 12px 30px rgba(0,0,0,.08);
+  --radius:18px;
+}
 
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: Inter, Arial, sans-serif;
-      color: var(--text);
-      background: radial-gradient(1200px 500px at 20% -10%, rgba(22,163,74,.18), transparent 60%),
-                  radial-gradient(900px 450px at 90% 0%, rgba(14,165,233,.14), transparent 55%),
-                  var(--bg);
-      line-height:1.5;
-    }
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:linear-gradient(180deg,#f0fdf4,#f6f8fb);
+  color:var(--text);
+}
 
-    a{ color:inherit; }
-    .container{
-      width:min(1100px, 92vw);
-      margin: 0 auto;
-    }
+.container{width:min(1100px,92%);margin:auto}
+a{text-decoration:none;color:inherit}
 
-    /* Header */
-    header{
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-      background: rgba(246,248,251,.75);
-      border-bottom: 1px solid rgba(15,23,42,.06);
-    }
+header{
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:var(--shadow);
+}
 
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding: 14px 0;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-    }
-    .brand img{
-      width:52px;
-      height:52px;
-      object-fit:contain;
-      border-radius: 12px;
-      background: #fff;
-      box-shadow: var(--shadow2);
-      padding:6px;
-    }
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      line-height:1.15;
-    }
-    .brand-title strong{ font-size: 1rem; }
-    .brand-title span{ font-size: .85rem; color: var(--muted); }
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+}
 
-    .nav-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius: 999px;
-      border:1px solid rgba(15,23,42,.10);
-      background:#fff;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow: var(--shadow2);
-      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-    }
-    .btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow); border-color: rgba(15,23,42,.18); }
-    .btn.primary{ background: linear-gradient(135deg, var(--green), var(--green2)); color:#fff; border-color: transparent; }
-    .btn.blue{ background: linear-gradient(135deg, var(--blue), #2563eb); color:#fff; border-color: transparent; }
-    .btn.ghost{ background:#fff; color: var(--text); }
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
 
-    /* Hero */
-    .hero{
-      padding: 40px 0 10px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-    .hero-card{
-      background: rgba(255,255,255,.85);
-      border:1px solid rgba(15,23,42,.06);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 26px;
-    }
-    .kicker{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      background: rgba(22,163,74,.10);
-      color: #0b3d1d;
-      border: 1px solid rgba(22,163,74,.20);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: .88rem;
-      margin-bottom: 14px;
-    }
-    h1{
-      margin: 0 0 10px;
-      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-      letter-spacing: -0.02em;
-    }
-    .lead{
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .hero-pills{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 12px;
-      color: var(--muted);
-      font-weight:600;
-      font-size:.92rem;
-    }
-    .pill{
-      background:#fff;
-      border:1px solid rgba(15,23,42,.08);
-      padding: 8px 12px;
-      border-radius:999px;
-      box-shadow: var(--shadow2);
-    }
+.brand img{
+  width:52px;
+  border-radius:12px;
+}
 
-    .info-card{
-      background: rgba(255,255,255,.85);
-      border:1px solid rgba(15,23,42,.06);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:14px;
-    }
-    .info-card h3{ margin:0; font-size:1.05rem; }
-    .info-row{
-      display:grid;
-      gap:8px;
-      color: var(--muted);
-      font-weight:600;
-      font-size:.95rem;
-    }
-    .info-row a{ color: var(--text); }
-    .mini{
-      font-size:.9rem;
-      color: var(--muted);
-      margin:0;
-    }
+.nav-actions a{
+  margin-left:8px;
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:700;
+  background:#fff;
+  border:1px solid #ddd;
+}
 
-    /* Sections */
-    section{ padding: 26px 0; }
-    .section-title{
-      display:flex;
-      align-items:baseline;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom: 14px;
-    }
-    h2{
-      margin:0;
-      font-size: 1.5rem;
-      letter-spacing: -0.01em;
-    }
-    .sub{
-      margin: 0;
-      color: var(--muted);
-      font-size: .98rem;
-    }
+.btn-primary{
+  background:linear-gradient(135deg,var(--green),var(--green-dark));
+  color:#fff;
+  border:none;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    .card{
-      background: var(--card);
-      border:1px solid rgba(15,23,42,.06);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow2);
-      padding: 18px;
-    }
-    .card h3{ margin:0 0 10px; }
-    ul{ margin:0; padding-left: 18px; color: var(--muted); font-weight:600; }
-    li{ margin: 6px 0; }
+.btn-blue{
+  background:linear-gradient(135deg,var(--blue),#2563eb);
+  color:#fff;
+  border:none;
+}
 
-    /* Gallery */
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-    }
-    .gallery img{
-      width:100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      border:1px solid rgba(15,23,42,.08);
-      box-shadow: var(--shadow2);
-      background:#fff;
-    }
+section{padding:40px 0}
 
-    /* Forms */
-    .form-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items:start;
-    }
-    label{
-      display:block;
-      font-weight:800;
-      margin-bottom: 8px;
-      font-size: .92rem;
-    }
-    input, select, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(15,23,42,.12);
-      outline: none;
-      font-family: inherit;
-      font-size: 1rem;
-      background: #fff;
-    }
-    input:focus, select:focus, textarea:focus{
-      box-shadow: 0 0 0 6px var(--ring);
-      border-color: rgba(22,163,74,.35);
-    }
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:24px;
+}
 
-    .form-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+.hero-card,.info-card,.card{
+  background:var(--card);
+  padding:24px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
 
-    /* Map */
-    .map{
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid rgba(15,23,42,.08);
-      box-shadow: var(--shadow2);
-    }
-    iframe{ width:100%; height:320px; border:0; }
+.hero h1{margin-top:0;font-size:2.2rem}
+.hero p{color:var(--muted)}
 
-    /* Footer */
-    footer{
-      margin-top: 24px;
-      background: linear-gradient(135deg, #0b3d1d, #16a34a);
-      color:#fff;
-      padding: 24px 0;
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items:start;
-    }
-    .footer-grid a{ color:#fff; text-decoration: underline; }
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+ul{padding-left:18px;color:var(--muted)}
 
-    /* Responsive */
-    @media (max-width: 860px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .cards{ grid-template-columns: 1fr; }
-      .form-grid{ grid-template-columns: 1fr; }
-      .footer-grid{ grid-template-columns: 1fr; }
-      .nav{ flex-direction:column; align-items:flex-start; }
-      .nav-actions{ width:100%; justify-content:flex-start; }
-    }
-  </style>
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:12px;
+}
+
+.gallery img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:var(--radius);
+}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:12px;
+  border:1px solid #ccc;
+}
+
+iframe{
+  width:100%;
+  height:320px;
+  border:0;
+  border-radius:var(--radius);
+}
+
+footer{
+  background:linear-gradient(135deg,#0b3d1d,#16a34a);
+  color:#fff;
+  padding:30px 0;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .hero,.cards,.form-grid{grid-template-columns:1fr}
+}
+
+/* STICKY MOBILE QUOTE BUTTON */
+.mobile-sticky-quote{display:none}
+
+@media(max-width:768px){
+  .mobile-sticky-quote{
+    display:flex;
+    position:fixed;
+    bottom:16px;
+    left:50%;
+    transform:translateX(-50%);
+    background:linear-gradient(135deg,var(--green),var(--green-dark));
+    color:#fff;
+    padding:14px 22px;
+    border-radius:999px;
+    font-weight:800;
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+    z-index:9999;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="#top">
-        <img src="logo.png" alt="PRO365 Lawn Service Logo">
-        <div class="brand-title">
-          <strong>PRO365 Lawn Service</strong>
-          <span>Volusia County, FL • English & Spanish</span>
-        </div>
-      </a>
-
-      <div class="nav-actions">
-        <a class="btn ghost" href="tel:14078020334">Call</a>
-        <a class="btn blue" href="sms:14078020334">Text</a>
-        <a class="btn ghost" href="mailto:pro365e@gmail.com">Email</a>
-        <a class="btn primary" href="#quote">Get a Quote</a>
+  <div class="container nav">
+    <div class="brand">
+      <img src="logo.png" alt="PRO365 Lawn Service Logo">
+      <div>
+        <strong>PRO365 Lawn Service</strong><br>
+        <small>Volusia County • English & Spanish</small>
       </div>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:14078020334">Call</a>
+      <a href="sms:14078020334" class="btn-blue">Text</a>
+      <a href="#quote" class="btn-primary">Get Quote</a>
     </div>
   </div>
 </header>
 
-<main id="top">
-  <div class="container">
+<main class="container">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <div class="kicker">✅ Reliable • Affordable • Professional</div>
-          <h1>We keep your lawn clean, trimmed, and looking sharp — all year.</h1>
-          <p class="lead">
-            Serving Volusia County, FL with mowing, trimming, edging, blowing, hedging, mulch/rocks, and cleanups.
-            <strong>Bilingual service (English & Spanish).</strong>
-          </p>
+<section class="hero">
+  <div class="hero-card">
+    <h1>Professional Lawn Care You Can Count On</h1>
+    <p>Mowing, trimming, edging, landscaping, mulch, and cleanups throughout Volusia County, FL.</p>
+    <p><strong>Mon–Fri:</strong> 8:00 AM – 7:00 PM</p>
+  </div>
 
-          <div class="nav-actions" style="margin-top:14px;">
-            <a class="btn primary" href="#quote">Request a Quote</a>
-            <a class="btn blue" href="sms:14078020334">Text Us</a>
-            <a class="btn ghost" href="tel:14078020334">Call (407) 802-0334</a>
-          </div>
+  <div class="info-card">
+    <p>📞 <strong>(407) 802-0334</strong></p>
+    <p>✉️ pro365e@gmail.com</p>
+    <p>📍 Volusia County, Florida</p>
+  </div>
+</section>
 
-          <div class="hero-pills">
-            <div class="pill">Mon–Fri: 8:00 AM – 7:00 PM</div>
-            <div class="pill">Flexible payment options</div>
-            <div class="pill">Fast response</div>
-          </div>
-        </div>
+<section>
+  <h2>Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Lawn Care</h3>
+      <ul>
+        <li>Mowing</li>
+        <li>Trimming</li>
+        <li>Edging</li>
+        <li>Blowing</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Landscaping</h3>
+      <ul>
+        <li>Landscape Design</li>
+        <li>Hedging</li>
+        <li>Mulch / Rocks</li>
+        <li>Leaf Cleanup</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        <div class="info-card">
-          <div>
-            <h3>Quick Info</h3>
-            <div class="info-row">
-              <div>📞 <a href="tel:14078020334">(407) 802-0334</a></div>
-              <div>✉️ <a href="mailto:pro365e@gmail.com">pro365e@gmail.com</a></div>
-              <div>📍 Volusia County, Florida</div>
-            </div>
-          </div>
-          <p class="mini">
-            Tip: Texting is fastest. For desktop users, email is easiest.
-          </p>
-        </div>
-      </div>
-    </section>
+<section>
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="gallery1.jpg">
+    <img src="gallery2.jpg">
+  </div>
+</section>
 
-    <!-- SERVICES -->
-    <section>
-      <div class="section-title">
-        <h2>Services</h2>
-        <p class="sub">Mowing • Trimming • Edging • Blowing • Plus more</p>
-      </div>
+<section id="quote">
+  <h2>Request a Quote</h2>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Lawn Maintenance</h3>
-          <ul>
-            <li>Mowing</li>
-            <li>Trimming</li>
-            <li>Edging</li>
-            <li>Blowing</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Landscaping & Cleanup</h3>
-          <ul>
-            <li>Landscape design (light projects)</li>
-            <li>Hedging / Bush trimming</li>
-            <li>Mulch / Rock installation</li>
-            <li>Leaf cleanup & yard cleanups</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <div class="form-grid">
 
-    <!-- SPANISH -->
-    <section>
-      <div class="section-title">
-        <h2>Español</h2>
-        <p class="sub">Se habla Español • Cotizaciones por texto o email</p>
-      </div>
-      <div class="card">
-        <p style="margin:0;color:var(--muted);font-weight:600;">
-          Servimos el Condado de Volusia, Florida. Ofrecemos corte de grama, recorte, orillado, soplado,
-          recorte de arbustos, mulch/rocas y limpiezas de patio.
-        </p>
-      </div>
-    </section>
+    <div class="card">
+      <h3>Email Quote</h3>
+      <form action="mailto:pro365e@gmail.com" method="post" enctype="text/plain">
+        <input name="Name" placeholder="Name" required>
+        <input name="Email" type="email" placeholder="Email" required>
+        <input name="Address" placeholder="Address" required>
+        <select name="Service">
+          <option>Weekly Lawn Service</option>
+          <option>Biweekly Lawn Service</option>
+          <option>One-Time Cut</option>
+          <option>Landscape Design</option>
+          <option>Hedging</option>
+          <option>Mulch / Rocks</option>
+          <option>Other</option>
+        </select>
+        <textarea name="Notes" placeholder="Additional Info (Optional)"></textarea>
+        <button class="btn-primary">Send by Email</button>
+      </form>
+    </div>
 
-    <!-- GALLERY -->
-    <section>
-      <div class="section-title">
-        <h2>Gallery</h2>
-        <p class="sub">A few examples of our work</p>
-      </div>
-      <div class="gallery">
-        <img src="gallery1.jpg" alt="Example of lawn work 1">
-        <img src="gallery2.jpg" alt="Example of lawn work 2">
-      </div>
-    </section>
-
-    <!-- QUOTE -->
-    <section id="quote">
-      <div class="section-title">
-        <h2>Request a Quote</h2>
-        <p class="sub">Choose Email or Text</p>
-      </div>
-
-      <div class="form-grid">
-
-        <!-- EMAIL FORM -->
-        <div class="card">
-          <h3 style="margin-top:0;">Quote by Email (Best for desktop)</h3>
-
-          <form action="mailto:pro365e@gmail.com" method="post" enctype="text/plain">
-            <label>Your Name</label>
-            <input type="text" name="Name" placeholder="Your Name" required>
-
-            <label>Your Email</label>
-            <input type="email" name="Email" placeholder="Your Email" required>
-
-            <label>Property Address</label>
-            <input type="text" name="Address" placeholder="Property Address" required>
-
-            <label>Service Requested</label>
-            <select name="Service">
-              <option>Weekly Lawn Service</option>
-              <option>Biweekly Lawn Service</option>
-              <option>One-Time Cut</option>
-              <option>Cleanup / Leaf Removal</option>
-              <option>Landscape Design</option>
-              <option>Hedging</option>
-              <option>Mulch / Rocks</option>
-              <option>Other</option>
-            </select>
-
-            <label>Additional Information (Optional)</label>
-            <textarea name="Notes" placeholder="Gates, pets, preferred day/time, photos, etc."></textarea>
-
-            <div class="form-actions">
-              <button class="btn primary" type="submit">Send Quote by Email</button>
-            </div>
-          </form>
-        </div>
-
-        <!-- TEXT FORM -->
-        <div class="card">
-          <h3 style="margin-top:0;">Quote by Text (Fastest on phone)</h3>
-
-          <form onsubmit="event.preventDefault();
-            const n=this.name.value;
-            const p=this.phone.value;
-            const a=this.address.value;
-            const s=this.service.value;
-            const notes=this.notes.value ? ' Notes: '+this.notes.value : '';
-            window.location.href=`sms:14078020334?body=Name: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0AAddress: ${encodeURIComponent(a)}%0AService: ${encodeURIComponent(s)}%0A${encodeURIComponent(notes)}`;">
-
-            <label>Your Name</label>
-            <input type="text" name="name" placeholder="Your Name" required>
-
-            <label>Phone Number</label>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-
-            <label>Property Address</label>
-            <input type="text" name="address" placeholder="Property Address" required>
-
-            <label>Service Requested</label>
-            <select name="service">
-              <option>Weekly Lawn Service</option>
-              <option>Biweekly Lawn Service</option>
-              <option>One-Time Cut</option>
-              <option>Cleanup / Leaf Removal</option>
-              <option>Landscape Design</option>
-              <option>Hedging</option>
-              <option>Mulch / Rocks</option>
-              <option>Other</option>
-            </select>
-
-            <label>Additional Information (Optional)</label>
-            <textarea name="notes" placeholder="Add details (optional)"></textarea>
-
-            <div class="form-actions">
-              <button class="btn blue" type="submit">Send Quote by Text</button>
-              <a class="btn ghost" href="tel:14078020334">Call instead</a>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- MAP -->
-    <section>
-      <div class="section-title">
-        <h2>Service Area</h2>
-        <p class="sub">Volusia County, Florida</p>
-      </div>
-      <div class="map">
-        <iframe src="https://www.google.com/maps?q=Volusia+County,+Florida&output=embed" allowfullscreen></iframe>
-      </div>
-    </section>
+    <div class="card">
+      <h3>Text Quote (Fastest)</h3>
+      <form onsubmit="event.preventDefault();
+        const n=this.name.value,p=this.phone.value,a=this.address.value,s=this.service.value,notes=this.notes.value;
+        window.location.href=`sms:14078020334?body=Name:${n}%0APhone:${p}%0AAddress:${a}%0AService:${s}%0ANotes:${notes}`;">
+        <input name="name" placeholder="Name" required>
+        <input name="phone" placeholder="Phone" required>
+        <input name="address" placeholder="Address" required>
+        <select name="service">
+          <option>Weekly Lawn Service</option>
+          <option>Biweekly Lawn Service</option>
+          <option>One-Time Cut</option>
+          <option>Landscape Design</option>
+          <option>Hedging</option>
+          <option>Mulch / Rocks</option>
+          <option>Other</option>
+        </select>
+        <textarea name="notes" placeholder="Additional Info (Optional)"></textarea>
+        <button class="btn-blue">Send by Text</button>
+      </form>
+    </div>
 
   </div>
+</section>
+
+<section>
+  <h2>Service Area</h2>
+  <iframe src="https://www.google.com/maps?q=Volusia+County,+Florida&output=embed"></iframe>
+</section>
+
 </main>
 
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <strong>PRO365 Lawn Service</strong>
-        <p style="margin:.4rem 0 0; opacity:.9;">Professional • Reliable • Bilingual</p>
-        <p style="margin:.4rem 0 0; opacity:.9;">Mon–Fri: 8:00 AM – 7:00 PM</p>
-      </div>
-      <div>
-        <p style="margin:0 0 .4rem;"><strong>Contact</strong></p>
-        <p style="margin:.2rem 0;">Phone: <a href="tel:14078020334">(407) 802-0334</a></p>
-        <p style="margin:.2rem 0;">Email: <a href="mailto:pro365e@gmail.com">pro365e@gmail.com</a></p>
-        <p style="margin:.2rem 0;">Facebook: <a href="YOUR_FACEBOOK_PAGE_LINK_HERE" target="_blank" rel="noopener">Visit our page</a></p>
-      </div>
-    </div>
-    <p style="margin:14px 0 0; opacity:.85; font-size:.9rem;">
-      Keywords: lawn care, mowing, trimming, edging, blowing, landscaping, hedging, mulch, rocks, Volusia County, grama, corte
-    </p>
+    <p><strong>PRO365 Lawn Service</strong></p>
+    <p>📘 <a href="YOUR_FACEBOOK_PAGE_LINK_HERE" target="_blank">Visit us on Facebook</a></p>
+    <p>Call or Text (407) 802-0334</p>
   </div>
 </footer>
+
+<a href="#quote" class="mobile-sticky-quote">💬 Get a Quote</a>
 
 </body>
 </html>
